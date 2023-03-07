@@ -2,4 +2,8 @@ function somatorio(a, b) {
     return a + b;
 }
 var resultado = somatorio(2, 5);
-console.log(resultado);
+function _add(a, b) {
+    return a + b;
+}
+var result = _add("vasco", 3);
+console.log(result);

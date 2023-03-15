@@ -5,4 +5,14 @@ import { Component } from '@angular/core';
   selector: 'app-server', //Elemento unico, nao duplicado
   templateUrl: './server.component.html',
 })
-export class ServerComponent {}
+export class ServerComponent {
+  serverId = '#13';
+  serverStatus = 'online';
+
+  getServerId() {
+    return this.serverId;
+  }
+  getServerStatus() {
+    return this.serverStatus;
+  }
+}

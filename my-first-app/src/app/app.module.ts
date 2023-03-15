@@ -6,6 +6,8 @@ import { ServerComponent } from './server/server.component'; // É preciso impor
 import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SucessAlertComponent } from './sucess-alert/sucess-alert.component';
+import { FormsModule } from '@angular/forms';
+import { UserTwoBindingComponent } from './user-two-binding/user-two-binding.component';
 
 /* Decorator do meu AppModule
  * Existem 4 PROPRIEDADES sendo passadas
@@ -19,8 +21,9 @@ import { SucessAlertComponent } from './sucess-alert/sucess-alert.component';
     ServersComponent,
     WarningAlertComponent,
     SucessAlertComponent,
+    UserTwoBindingComponent,
   ], // Aqui eu especifico que o ServerComponent existe. Apenas Criá-lo não é suficiente
-  imports: [BrowserModule],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

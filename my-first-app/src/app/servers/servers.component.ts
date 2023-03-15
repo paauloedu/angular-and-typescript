@@ -9,10 +9,30 @@ import { Component } from '@angular/core';
    * agora, é possível passar um template de um Component dentro de outro Component
    * no caso do template abaixo, ele utiliza o app-server como link externo
    */
-  template: `
-    <app-server></app-server>
-    <app-server></app-server>
-  `,
+  templateUrl: './servers.component.html',
   styleUrls: ['./servers.component.css'],
 })
-export class ServersComponent {}
+export class ServersComponent {
+  allowNewServer = false;
+  serverCreationStatus = 'No server was created!';
+  serverName = '';
+
+  constructor() {
+    setTimeout(() => {
+      this.allowNewServer = !false;
+    }, 2000);
+  }
+
+  getServerCreateStatus() {
+    return this.serverCreationStatus;
+  }
+
+  onServerCreate() {
+    this.serverCreationStatus =
+      'Server was created! Name is ' + this.serverName;
+  }
+
+  onUpdateServerName(event: Event) {
+    this.serverName = (<HTMLInputElement>event.target).value;
+  }
+}

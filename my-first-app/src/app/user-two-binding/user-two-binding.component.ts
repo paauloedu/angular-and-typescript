@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-two-binding.component.css'],
 })
 export class UserTwoBindingComponent {
-  username: '';
+  username = '';
 }

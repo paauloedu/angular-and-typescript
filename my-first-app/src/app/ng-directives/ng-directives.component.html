@@ -1,0 +1,13 @@
+<button class="btn btn-primary" (click)="showDetails()">Display Details</button>
+<p *ngIf="displayDetails">Secret Password = 'vasco'</p>
+<!-- Esse i = index pega a posição do for, então para o caso da data, nao será problema mais adicioná-lo no array count -->
+<p
+  *ngFor="let item of count; let i = index"
+  [ngStyle]="
+    i >= 4 ? { backgroundColor: 'blue', padding: '10px' } : { padding: '10px' }
+  "
+  [ngClass]="{ fontcolor: i >= 4 }"
+>
+  <!-- Click de número: {{ item }} do botão. -->
+  Pressionado às: {{ item }}
+</p>

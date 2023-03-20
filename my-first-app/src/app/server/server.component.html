@@ -1,1 +1,7 @@
-<p>The {{ "Server" }} with ID {{ getServerId() }} is {{ getServerStatus() }}</p>
+<!-- Adicione a classe online caso o serverStatus seja online -->
+<p
+  [ngStyle]="{ backgroundColor: getColor(), padding: '10px' }"
+  [ngClass]="{ online: getServerStatus() === 'online' }"
+>
+  The {{ "Server" }} with ID {{ getServerId() }} is {{ getServerStatus() }}
+</p>

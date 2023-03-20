@@ -1,5 +1,6 @@
 <label>Server Name</label>
-<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+<!-- Sem Diretiva ngModel -->
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)" /> -->
 <!-- Utilizando Two way data binding, posso mudar aqui o serverName em toda app-->
 <input type="text" class="form-control" [(ngModel)]="serverName" />
 <p>{{ serverName }}</p>
@@ -11,4 +12,16 @@
   Add Server
 </button>
 <p [innerText]="allowNewServer"></p>
-<p>{{ getServerCreateStatus() }}</p>
+<!-- <p>{{ getServerCreateStatus() }}</p> -->
+<!-- O * indica uma diretiva estrutural que altera nossa estrura de DOM 
+    Ao contrário das diretivas estruturais, as diretivas de atributo não 
+    adicionam ou removem elementos. 
+    Eles apenas mudam o elemento em que foram colocados
+-->
+<p *ngIf="serverCreated; else noServer">
+  Server was created! Server Name is {{ serverName }}
+</p>
+<ng-template #noServer>
+  <p>No server was created!</p>
+</ng-template>
+<app-server *ngFor="let server of servers"></app-server>

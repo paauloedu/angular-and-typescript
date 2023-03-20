@@ -8,6 +8,7 @@ import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SucessAlertComponent } from './sucess-alert/sucess-alert.component';
 import { FormsModule } from '@angular/forms';
 import { UserTwoBindingComponent } from './user-two-binding/user-two-binding.component';
+import { NgDirectivesComponent } from './ng-directives/ng-directives.component';
 
 /* Decorator do meu AppModule
  * Existem 4 PROPRIEDADES sendo passadas
@@ -22,6 +23,7 @@ import { UserTwoBindingComponent } from './user-two-binding/user-two-binding.com
     WarningAlertComponent,
     SucessAlertComponent,
     UserTwoBindingComponent,
+    NgDirectivesComponent,
   ], // Aqui eu especifico que o ServerComponent existe. Apenas Criá-lo não é suficiente
   imports: [BrowserModule, FormsModule],
   providers: [],

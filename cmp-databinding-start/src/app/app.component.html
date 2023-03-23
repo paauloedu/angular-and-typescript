@@ -6,12 +6,19 @@
   <hr />
   <div class="row">
     <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()">
+        Mudar primeiro elemento
+      </button>
+      <button class="btn btn-danger" (click)="onDestroyFirst()">
+        Destruir o primeiro elemento
+      </button>
       <!-- Utilizando Databind in Components, também um Alias para srvElement -->
       <app-server-element
         *ngFor="let serverElement of serverElements"
         [srvElement]="serverElement"
+        [name]="serverElement.name"
       >
-        <p>
+        <p #contentParagraph>
           <strong *ngIf="serverElement.type === 'server'" style="color: red">{{
             serverElement.content
           }}</strong>

@@ -31,4 +31,12 @@ export class AppComponent {
       content: blueprintData.serverContent, //Digo que o content é oq estou recebendo no obj blueprintData
     });
   }
+
+  onChangeFirst() {
+    this.serverElements[0].name = 'Changed!';
+  }
+
+  onDestroyFirst() {
+    this.serverElements.splice(0, 1);
+  }
 }

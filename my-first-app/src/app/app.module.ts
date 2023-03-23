@@ -9,6 +9,9 @@ import { SucessAlertComponent } from './sucess-alert/sucess-alert.component';
 import { FormsModule } from '@angular/forms';
 import { UserTwoBindingComponent } from './user-two-binding/user-two-binding.component';
 import { NgDirectivesComponent } from './ng-directives/ng-directives.component';
+import { GameControlComponent } from './game-control/game-control.component';
+import { OddComponent } from './odd/odd.component';
+import { EvenComponent } from './even/even.component';
 
 /* Decorator do meu AppModule
  * Existem 4 PROPRIEDADES sendo passadas
@@ -24,6 +27,9 @@ import { NgDirectivesComponent } from './ng-directives/ng-directives.component';
     SucessAlertComponent,
     UserTwoBindingComponent,
     NgDirectivesComponent,
+    GameControlComponent,
+    OddComponent,
+    EvenComponent,
   ], // Aqui eu especifico que o ServerComponent existe. Apenas Criá-lo não é suficiente
   imports: [BrowserModule, FormsModule],
   providers: [],

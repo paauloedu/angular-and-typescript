@@ -6,16 +6,20 @@ import { LoggingService } from '../logging.service';
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'],
-  providers: [LoggingService, AccountsService], // Defino um Service
+  // providers: [LoggingService], // Defino um Service
 })
 export class NewAccountComponent {
   constructor(
     private logginService: LoggingService,
     private accountsService: AccountsService
-  ) {} // Adiciono ele ao construtor
+  ) {
+    this.accountsService.statusUpdated.subscribe((status: string) =>
+      alert('Novo status: ' + status)
+    );
+  } // Adiciono ele ao construtor
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountsService.addAccount(accountName, accountStatus);
-    this.logginService.logStatusChange(accountStatus); // Agora posso acessá-lo
+    // this.logginService.logStatusChange(accountStatus); // Agora posso acessá-lo
   }
 }

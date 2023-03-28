@@ -6,7 +6,11 @@ import { AccountsService } from './accounts.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [AccountsService],
+  // // Aqui estou juntando toda logica que esta no service, ao meu AppComponent.
+  // // Agora o Angular sabe como criar o Serviço de Contas
+  // providers: [AccountsService],
+
+  // O NIVEL MAIS ALTO É O AppModule, não colocar aqui. Apenas manter no import
 })
 export class AppComponent implements OnInit {
   accounts: { name: string; status: string }[] = [];

@@ -1,2 +1,4 @@
-<p>User with ID _ID_ loaded.</p>
-<p>User name is _NAME_</p>
+<p>User with ID {{ user.id }}.</p>
+<p>User name is {{ user.name }}</p>
+<!-- Se colocar so users, ele tenta user/1/Max/users/10/Ana -->
+<a [routerLink]="['/users', 10, 'Anna']">Carregar Usuário Anna</a>

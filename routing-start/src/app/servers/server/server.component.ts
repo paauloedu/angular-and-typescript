@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Data, Params, Router } from '@angular/router';
 
 import { ServersService } from '../servers.service';
 
@@ -18,13 +18,16 @@ export class ServerComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // Agora preciso obter as informações passadas no path
-    const id = +this.route.snapshot.params['id']; //Pega imagem do path
-    this.server = this.serversService.getServer(id); // Pego o server com id
-    //Aqui eu faço o subscribe, o update com o que vem do path, obtenho o Server a partir do id que vem do path
-    this.route.params.subscribe((params: Params) => {
-      this.server = this.serversService.getServer(+params['id']);
+    this.route.data.subscribe((data: Data) => {
+      this.server = data['server'];
     });
+    // // Agora preciso obter as informações passadas no path
+    // const id = +this.route.snapshot.params['id']; //Pega imagem do path
+    // this.server = this.serversService.getServer(id); // Pego o server com id
+    // //Aqui eu faço o subscribe, o update com o que vem do path, obtenho o Server a partir do id que vem do path
+    // this.route.params.subscribe((params: Params) => {
+    //   this.server = this.serversService.getServer(+params['id']);
+    // });
   }
 
   onEdit() {

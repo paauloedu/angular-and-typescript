@@ -5,19 +5,19 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#" (click)="onSelect('recipe')">Receitas</a></li>
-        <li>
-          <a href="#" (click)="onSelect('shop-list')">Lista de Compras</a>
+        <li routerLinkActive="active"><a routerLink="/recipes">Receitas</a></li>
+        <li routerLinkActive="active">
+          <a routerLink="/shopping-list">Lista de Compras</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>
-          <a href="#" class="dropdown-toggle" role="button"
+          <a style="cursor: pointer" class="dropdown-toggle" role="button"
             >Gerenciar <span class="caret"></span
           ></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Salvar Dados</a></li>
-            <li><a href="#">Obter Dados</a></li>
+            <li><a style="cursor: pointer">Salvar Dados</a></li>
+            <li><a style="cursor: pointer">Obter Dados</a></li>
           </ul>
         </li>
       </ul>

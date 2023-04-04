@@ -9,11 +9,5 @@ import { RecipeService } from '../../recipe.service';
 })
 export class RecipeItemComponent {
   @Input() recipe: Recipe;
-
-  constructor(private recipeService: RecipeService) {}
-
-  onSelected() {
-    //Devo chamar um metodo do service
-    this.recipeService.recipeSelected.emit(this.recipe);
-  }
+  @Input() index: number;
 }

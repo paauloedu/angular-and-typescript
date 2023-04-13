@@ -3,7 +3,7 @@ import { Ingredient } from '../shared/ingredient.model';
 
 export class ShoppingListService {
   ingredientsChange = new Subject<Ingredient[]>(); // Registra se houve mudança de ingredientes
-
+  startedEditing = new Subject<number>();
   private ingredients: Ingredient[] = [
     new Ingredient('Tomate', 2),
     new Ingredient('Cebola', 2),
@@ -15,6 +15,10 @@ export class ShoppingListService {
     // Como aqui retorna uma copia, quando adicionamos um novo item, estamos adicionando a matriz original.
     // Logo, precisamos de um ingredientsChange para checkar se essa mudança ocorreu
     return this.ingredients.slice();
+  }
+
+  getIngredient(index: number) {
+    return this.ingredients[index];
   }
 
   addIngredient(ingredient: Ingredient) {
@@ -30,6 +34,16 @@ export class ShoppingListService {
 
     // for (let ingredient of ingredients) this.addIngredient(ingredient);
     this.ingredients.push(...ingredients);
+    this.ingredientsChange.next(this.ingredients.slice());
+  }
+
+  updateIngredient(index: number, newIngredient: Ingredient) {
+    this.ingredients[index] = newIngredient;
+    this.ingredientsChange.next(this.ingredients.slice());
+  }
+
+  deleteIngredient(index: number) {
+    this.ingredients.splice(index, 1);
     this.ingredientsChange.next(this.ingredients.slice());
   }
 }

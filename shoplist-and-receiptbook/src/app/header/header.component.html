@@ -16,8 +16,12 @@
             >Gerenciar <span class="caret"></span
           ></a>
           <ul class="dropdown-menu">
-            <li><a style="cursor: pointer">Salvar Dados</a></li>
-            <li><a style="cursor: pointer">Obter Dados</a></li>
+            <li>
+              <a style="cursor: pointer" (click)="onSaveData()">Salvar Dados</a>
+            </li>
+            <li>
+              <a style="cursor: pointer" (click)="onFetchData()">Obter Dados</a>
+            </li>
           </ul>
         </li>
       </ul>

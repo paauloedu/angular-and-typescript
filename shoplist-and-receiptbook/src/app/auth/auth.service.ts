@@ -131,13 +131,13 @@ export class AuthService {
     }
     switch (errorRes.error.error.message) {
       case 'EMAIL_EXISTS':
-        errorMessage = 'This email exists already';
+        errorMessage = 'Esse email já existe no Banco de Dados';
         break;
       case 'EMAIL_NOT_FOUND':
-        errorMessage = 'This email does not exist.';
+        errorMessage = 'Email não existe no Banco de Dados';
         break;
       case 'INVALID_PASSWORD':
-        errorMessage = 'This password is not correct.';
+        errorMessage = 'Senha incorreta';
         break;
     }
     return throwError(errorMessage);

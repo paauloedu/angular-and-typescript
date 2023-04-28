@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/shoplist-and-receiptbook",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
